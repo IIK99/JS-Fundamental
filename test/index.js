@@ -130,7 +130,12 @@ const person = {
   age: 30,
   greet: function () {
     console.log(
-      "Hi, my name is " + this.firstName + " " + this.lastName + " " + this.age
+      "Hi, my name is " +
+        person.firstName +
+        " " +
+        person.lastName +
+        " " +
+        person.age
     );
   },
 };
@@ -138,17 +143,47 @@ person.greet();
 
 // another arrow function with object
 const person2 = {
-    firstName: "John",
-    lastName: "Doe",
-    age: 30,
-    greet: function() {
-      const arrowGreet = () => {
-        console.log(
-          "Hi, my name is " + this.firstName + " " + this.lastName + " " + this.age
-        );
-      };
-      arrowGreet();
-    },
-  };
-  person2.greet();
-  
+  firstName: "John",
+  lastName: "Doe",
+  age: 30,
+  greet: function () {
+    const arrowGreet = () => {
+      console.log(
+        "Hi, my name is " +
+          this.firstName +
+          " " +
+          this.lastName +
+          " " +
+          this.age
+      );
+    };
+    arrowGreet();
+  },
+};
+person2.greet();
+
+// or
+const user = {
+  name: "Luis",
+  age: 24,
+  greet() {
+    console.log("hello");
+    console.log(this.age);
+  },
+};
+console.log(user.name);
+user.greet();
+
+// using class methods
+class User {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+  greet() {
+    console.log("hello");
+  }
+}
+const user1 = new User("manuel", 20);
+console.log(user1);
+user1.greet();
