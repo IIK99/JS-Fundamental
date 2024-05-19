@@ -81,3 +81,74 @@ function combine(a, b, c) {
 }
 let resultCombine = combine(10, 5, 2);
 console.log("result combine", resultCombine);
+
+// arrow functions
+const combine1 = (a, b, c) => {
+  return (a * b) / c;
+};
+let resultCombine1 = combine1(10, 5, 2);
+console.log("arrow function result", resultCombine1);
+
+// another arrow function
+const combine2 = (a, b, c) => (a * b) / c;
+let resultCombine2 = combine2(10, 5, 2);
+console.log("arrow function result", resultCombine2);
+
+// arrow functions triangle areas
+const triangleArea = (base, height) => {
+  return (base * height) / 2;
+};
+let resultTriangleArea = triangleArea(10, 5);
+console.log("triangle area result", resultTriangleArea);
+
+// another arrow function triangle
+const triangleArea2 = (base, height) => (base * height) / 2;
+let resultTriangleArea2 = triangleArea2(10, 5);
+console.log("triangle area result", resultTriangleArea2);
+
+// function Temperature Conversion from Celsius to Fahrenheit
+function celsiusToFahrenheit(celsius) {
+  return (celsius * 9) / 5 + 32;
+}
+let resultCelsiusToFahrenheit = celsiusToFahrenheit(10);
+console.log("celsius to fahrenheit result", resultCelsiusToFahrenheit);
+
+// another function Temperature Conversion from Celsius to Fahrenheit
+const celsiusToFahrenheit2 = (celsius) => (celsius * 9) / 5 + 32;
+let resultCelsiusToFahrenheit2 = celsiusToFahrenheit2(10);
+console.log("celsius to fahrenheit result", resultCelsiusToFahrenheit2);
+
+// function Calculating the Perimeter of a Rectangle
+const calculatePerimeter = (length, width) => 2 * (width + length);
+let resultCalculatePerimeter = calculatePerimeter(10, 5);
+console.log("calculate perimeter result", resultCalculatePerimeter);
+
+// arrow function with object
+const person = {
+  firstName: "John",
+  lastName: "Doe",
+  age: 30,
+  greet: function () {
+    console.log(
+      "Hi, my name is " + this.firstName + " " + this.lastName + " " + this.age
+    );
+  },
+};
+person.greet();
+
+// another arrow function with object
+const person2 = {
+    firstName: "John",
+    lastName: "Doe",
+    age: 30,
+    greet: function() {
+      const arrowGreet = () => {
+        console.log(
+          "Hi, my name is " + this.firstName + " " + this.lastName + " " + this.age
+        );
+      };
+      arrowGreet();
+    },
+  };
+  person2.greet();
+  
