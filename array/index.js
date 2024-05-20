@@ -121,3 +121,15 @@ console.log(unshiftArray); // Output: [0, 1, 2, 3]
 const array = [1, 2, 3, 4, 5];
 console.log(array.at(2)); // Output: 3
 console.log(array.at(-1)); // Output: 5
+
+function transformToObjects(numbers) {
+  return numbers.map((number) => {
+    return {
+      value: number,
+    };
+  });
+}
+
+const inputArray = [1, 2, 3, 4, 5];
+const outputArray = transformToObjects(inputArray);
+console.log(outputArray);
