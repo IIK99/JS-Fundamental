@@ -133,3 +133,88 @@ function transformToObjects(numbers) {
 const inputArray = [1, 2, 3, 4, 5];
 const outputArray = transformToObjects(inputArray);
 console.log(outputArray);
+
+const arrayDestructuring = [1, 2, 3];
+// Destructuring array
+const [first1, second, third] = arrayDestructuring;
+console.log(first1); // Output: 1
+console.log(second); // Output: 2
+console.log(third); // Output: 3
+
+const person = {
+  firstName: "John",
+  lastName: "Doe",
+  age: 30,
+};
+
+// Destructuring object
+const { firstName, lastName, age } = person;
+console.log(firstName); // Output: John
+console.log(lastName); // Output: Doe
+console.log(age); // Output: 30
+
+function printElements([first, second, third]) {
+  console.log(first); // Output: 1
+  console.log(second); // Output: 2
+  console.log(third); // Output: 3
+}
+
+const arrayElement = [1, 2, 3];
+printElements(arrayElement);
+
+function printPerson({ firstName, lastName, age }) {
+  console.log(firstName); // Output: John
+  console.log(lastName); // Output: Doe
+  console.log(age); // Output: 30
+}
+
+const person1 = {
+  firstName: "John",
+  lastName: "Doe",
+  age: 30,
+};
+printPerson(person1);
+
+const array4 = [1, 2, 3];
+const array5 = [4, 5, 6];
+
+// Menggabungkan dua array menggunakan spread operator
+const combinedArray = [...array4, ...array5];
+
+console.log(combinedArray); // Output: [1, 2, 3, 4, 5, 6]
+
+const obj1 = { a: 1, b: 2 };
+const obj2 = { c: 3, d: 4 };
+
+// Menggabungkan dua objek menggunakan spread operator
+const combinedObj = { ...obj1, ...obj2 };
+
+console.log(combinedObj); // Output: { a: 1, b: 2, c: 3, d: 4 }
+
+// Fungsi yang menggunakan array destructuring dan spread operator
+function combineAndPrint([first, ...rest]) {
+  console.log(first); // Output: 1
+  console.log(rest); // Output: [2, 3, 4, 5]
+}
+
+const array6 = [1, 2, 3, 4, 5];
+combineAndPrint(array6);
+
+// Fungsi yang menggunakan object destructuring di parameter dan spread operator
+function updatePerson({ firstName, lastName, ...rest }) {
+  const updatedPerson = {
+    ...rest,
+    fullName: `${firstName} ${lastName}`,
+  };
+  console.log(updatedPerson);
+}
+
+const person2 = {
+  firstName: "John",
+  lastName: "Doe",
+  age: 30,
+  country: "USA",
+};
+
+updatePerson(person2);
+// Output: { age: 30, country: 'USA', fullName: 'John Doe' }
