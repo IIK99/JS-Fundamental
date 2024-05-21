@@ -134,20 +134,20 @@ const inputArray = [1, 2, 3, 4, 5];
 const outputArray = transformToObjects(inputArray);
 console.log(outputArray);
 
-const arrayDestructuring = [1, 2, 3];
 // Destructuring array
+const arrayDestructuring = [1, 2, 3];
 const [first1, second, third] = arrayDestructuring;
 console.log(first1); // Output: 1
 console.log(second); // Output: 2
 console.log(third); // Output: 3
 
+// Destructuring object
 const person = {
   firstName: "John",
   lastName: "Doe",
   age: 30,
 };
 
-// Destructuring object
 const { firstName, lastName, age } = person;
 console.log(firstName); // Output: John
 console.log(lastName); // Output: Doe
@@ -175,18 +175,18 @@ const person1 = {
 };
 printPerson(person1);
 
+// Menggabungkan dua array menggunakan spread operator
 const array4 = [1, 2, 3];
 const array5 = [4, 5, 6];
 
-// Menggabungkan dua array menggunakan spread operator
 const combinedArray = [...array4, ...array5];
 
 console.log(combinedArray); // Output: [1, 2, 3, 4, 5, 6]
 
+// Menggabungkan dua objek menggunakan spread operator
 const obj1 = { a: 1, b: 2 };
 const obj2 = { c: 3, d: 4 };
 
-// Menggabungkan dua objek menggunakan spread operator
 const combinedObj = { ...obj1, ...obj2 };
 
 console.log(combinedObj); // Output: { a: 1, b: 2, c: 3, d: 4 }
@@ -218,3 +218,19 @@ const person2 = {
 
 updatePerson(person2);
 // Output: { age: 30, country: 'USA', fullName: 'John Doe' }
+
+const hobbies = ['sport', 'cooking']
+const user = {
+  name: 'John',
+  age: 30
+}
+
+const newHobbies = ['ridding']
+const mergeHobbies = [...hobbies, ...newHobbies]
+console.log(mergeHobbies);
+
+const extendedUser = {
+  isAdmin: true,
+  ...user
+}
+console.log(extendedUser);
